@@ -1,9 +1,9 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Resources;
+namespace Vvb13a\FilamentModelChecker\Filament\Resources;
 
 use Filament\Resources\Resource;
-use Vvb13a\LaravelModelChecker\Filament\Resources\SummaryResource\Pages\ListSummaries;
+use Vvb13a\FilamentModelChecker\Filament\Resources\SummaryResource\Pages\ListSummaries;
 use Vvb13a\LaravelModelChecker\Models\Summary;
 
 class SummaryResource extends Resource

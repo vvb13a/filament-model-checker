@@ -1,12 +1,12 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Widgets;
+namespace Vvb13a\FilamentModelChecker\Filament\Widgets;
 
 use Filament\Widgets\Concerns\InteractsWithPageTable;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Facades\DB;
-use Vvb13a\LaravelModelChecker\Filament\Resources\SummaryResource\Pages\ListSummaries;
+use Vvb13a\FilamentModelChecker\Filament\Resources\SummaryResource\Pages\ListSummaries;
 use Vvb13a\LaravelResponseChecker\Enums\FindingLevel;
 
 class SummaryStats extends StatsOverviewWidget

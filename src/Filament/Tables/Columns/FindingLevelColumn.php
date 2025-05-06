@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Tables\Columns;
+namespace Vvb13a\FilamentModelChecker\Filament\Tables\Columns;
 
 use Filament\Tables\Columns\TextColumn;
 use Vvb13a\LaravelResponseChecker\Enums\FindingLevel;

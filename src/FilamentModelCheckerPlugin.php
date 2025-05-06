@@ -1,11 +1,11 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker;
+namespace Vvb13a\FilamentModelChecker;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Vvb13a\LaravelModelChecker\Filament\Resources\FindingResource;
-use Vvb13a\LaravelModelChecker\Filament\Resources\SummaryResource;
+use Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource;
+use Vvb13a\FilamentModelChecker\Filament\Resources\SummaryResource;
 
 class FilamentModelCheckerPlugin implements Plugin
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Infolists;
+namespace Vvb13a\FilamentModelChecker\Filament\Infolists;
 
 use Closure;
 use Filament\Infolists\Components\Section;

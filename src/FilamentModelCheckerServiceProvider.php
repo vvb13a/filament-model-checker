@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker;
+namespace Vvb13a\FilamentModelChecker;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

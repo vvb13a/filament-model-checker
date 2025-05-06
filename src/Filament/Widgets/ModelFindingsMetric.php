@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Widgets;
+namespace Vvb13a\FilamentModelChecker\Filament\Widgets;
 
 use Filament\Support\Colors\Color;
 use Filament\Widgets\ChartWidget;

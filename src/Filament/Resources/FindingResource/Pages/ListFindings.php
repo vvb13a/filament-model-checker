@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Resources\FindingResource\Pages;
+namespace Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource\Pages;
 
 use Filament\Facades\Filament;
 use Filament\Pages\Concerns\ExposesTableToWidgets;
@@ -9,16 +9,14 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Vvb13a\FilamentFrontendInspector\Filament\Resources\CheckRunResource;
-use Vvb13a\FilamentFrontendInspector\FilamentFrontendInspectorPlugin;
-use Vvb13a\LaravelModelChecker\Filament\Actions\LaunchBulkModelChecksAction;
-use Vvb13a\LaravelModelChecker\Filament\Infolists\FindingDetailsSection;
-use Vvb13a\LaravelModelChecker\Filament\Resources\FindingResource;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Columns\FindingLevelColumn;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Filters\CheckableTypesFilter;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Filters\CheckNameFilter;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Filters\FindingLevelFilter;
-use Vvb13a\LaravelModelChecker\Filament\Widgets\FindingStats;
+use Vvb13a\FilamentModelChecker\Filament\Actions\LaunchBulkModelChecksAction;
+use Vvb13a\FilamentModelChecker\Filament\Infolists\FindingDetailsSection;
+use Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Columns\FindingLevelColumn;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\CheckableTypesFilter;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\CheckNameFilter;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\FindingLevelFilter;
+use Vvb13a\FilamentModelChecker\Filament\Widgets\FindingStats;
 use Vvb13a\LaravelModelChecker\Models\Finding;
 
 class ListFindings extends ListRecords

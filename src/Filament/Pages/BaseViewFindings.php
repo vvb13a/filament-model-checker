@@ -1,18 +1,18 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Pages;
+namespace Vvb13a\FilamentModelChecker\Filament\Pages;
 
 use Filament\Resources\Pages\ManageRelatedRecords;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Vvb13a\LaravelModelChecker\Filament\Actions\LaunchModelChecksAction;
-use Vvb13a\LaravelModelChecker\Filament\Infolists\FindingDetailsSection;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Columns\FindingLevelColumn;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Filters\CheckNameFilter;
-use Vvb13a\LaravelModelChecker\Filament\Tables\Filters\FindingLevelFilter;
-use Vvb13a\LaravelModelChecker\Filament\Widgets\ModelChecksMetric;
-use Vvb13a\LaravelModelChecker\Filament\Widgets\ModelFindingsMetric;
+use Vvb13a\FilamentModelChecker\Filament\Actions\LaunchModelChecksAction;
+use Vvb13a\FilamentModelChecker\Filament\Infolists\FindingDetailsSection;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Columns\FindingLevelColumn;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\CheckNameFilter;
+use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\FindingLevelFilter;
+use Vvb13a\FilamentModelChecker\Filament\Widgets\ModelChecksMetric;
+use Vvb13a\FilamentModelChecker\Filament\Widgets\ModelFindingsMetric;
 use Vvb13a\LaravelModelChecker\Models\Finding;
 
 class BaseViewFindings extends ManageRelatedRecords

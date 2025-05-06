@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Tables\Filters;
+namespace Vvb13a\FilamentModelChecker\Filament\Tables\Filters;
 
 use Filament\Tables\Filters\SelectFilter;
 use Vvb13a\LaravelResponseChecker\Enums\FindingLevel;

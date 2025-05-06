@@ -1,6 +1,6 @@
 <?php
 
-namespace Vvb13a\LaravelModelChecker\Filament\Actions;
+namespace Vvb13a\FilamentModelChecker\Filament\Actions;
 
 use Filament\Actions\Action;
 use Filament\Support\Enums\IconPosition;
