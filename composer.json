@@ -1,0 +1,61 @@
+{
+  "name": "vvb13a/filament-model-checker",
+  "description": "Filament UI for the Laravel Model Checker package.",
+  "type": "library",
+  "require": {
+    "php": "^8.2",
+    "filament/filament": "^3.0",
+    "illuminate/support": "^9.0|^10.0|^11.0",
+    "spatie/laravel-package-tools": "^1.14",
+    "vvb13a/laravel-model-checker": "dev-main",
+    "vvb13a/laravel-response-checker": "dev-main"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0",
+    "orchestra/testbench": "^7.0|^8.0|^9.0"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Vvb13a\\FilamentModelChecker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vvb13a\\FilamentModelChecker\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+    "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/vvb13a/laravel-model-checker.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/vvb13a/laravel-response-checker.git"
+    }
+  ],
+  "authors": [
+    {
+      "name": "vvb13a",
+      "email": "vvb@wiot-tomorrow.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vvb13a\\FilamentModelChecker\\FilamentModelCheckerServiceProvider"
+      ],
+      "aliases": {
+        "FilamentModelChecker": "Vvb13a\\FilamentModelChecker\\Facades\\FilamentModelChecker"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
