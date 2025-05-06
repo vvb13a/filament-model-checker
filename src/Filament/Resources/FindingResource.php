@@ -2,7 +2,10 @@
 
 namespace Vvb13a\FilamentModelChecker\Filament\Resources;
 
+use Filament\Facades\Filament;
 use Filament\Resources\Resource;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource\Pages\ListFindings;
 use Vvb13a\LaravelModelChecker\Models\Finding;
 
@@ -19,15 +22,25 @@ class FindingResource extends Resource
         ];
     }
 
-    protected static function getRecordResourceUrl($record): string
+    public static function getEloquentQuery(): Builder
     {
-        // Map Checkable Models to Resource Url -> TableRecordUrl
-        return '';
-    }
+        $currentPanel = Filament::getCurrentPanel();
+        $plugin = null;
 
-    protected static function getRecordDisplayTitle($record): string
-    {
-        // Map Checkable Models to Title
-        return '';
+        if ($currentPanel && $currentPanel->hasPlugin('filament-model-checker')) {
+            $plugin = $currentPanel->getPlugin('filament-model-checker');
+        }
+
+        $checkableTypes = $plugin?->getCheckableTypes() ?? [];
+
+        if (empty($checkableTypes)) {
+            return parent::getEloquentQuery();
+        }
+
+        $aliases = collect($checkableTypes)->map(function ($value) {
+            return Relation::getMorphAlias($value);
+        })->toArray();
+
+        return parent::getEloquentQuery()->whereIn('checkable_type', $aliases);
     }
 }
