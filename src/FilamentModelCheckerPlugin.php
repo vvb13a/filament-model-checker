@@ -6,6 +6,7 @@ use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource;
 use Vvb13a\FilamentModelChecker\Filament\Resources\SummaryResource;
+use Vvb13a\FilamentModelChecker\Filament\Widgets;
 
 class FilamentModelCheckerPlugin implements Plugin
 {
@@ -44,6 +45,12 @@ class FilamentModelCheckerPlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
+            ->widgets([
+                Widgets\FindingStats::class,
+                Widgets\ModelChecksMetric::class,
+                Widgets\ModelFindingsMetric::class,
+                Widgets\SummaryStats::class,
+            ])
             ->resources([
                 $this->getSummaryResourceClass(),
                 $this->getFindingResourceClass(),
