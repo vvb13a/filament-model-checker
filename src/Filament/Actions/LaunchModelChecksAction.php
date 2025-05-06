@@ -26,7 +26,3 @@ class LaunchModelChecksAction extends Action
         });
     }
 }
-
-
-
-

@@ -24,10 +24,8 @@ class ModelChecksMetric extends ChartWidget
 
     protected function getData(): array
     {
-        $this->loadData();
-
         if (!$this->summary) {
-            return $this->getPlaceholdData('Status not available');
+            return $this->getPlaceholder('Status not available');
         }
 
         $counts = $this->summary->check_counts ?? [];
@@ -38,9 +36,9 @@ class ModelChecksMetric extends ChartWidget
         if ($data->isEmpty()) {
             $this->totalChecks = 0;
             if ($this->summary->status === FindingLevel::SUCCESS) {
-                return $this->getPlaceholdData('All Checks Passed', FindingLevel::SUCCESS->value);
+                return $this->getPlaceholder('All Checks Passed', FindingLevel::SUCCESS->value);
             } else {
-                return $this->getPlaceholdData('No Findings Data');
+                return $this->getPlaceholder('No Findings Data');
             }
         }
 
@@ -60,12 +58,7 @@ class ModelChecksMetric extends ChartWidget
         ];
     }
 
-    protected function loadData(): void
-    {
-        $this->record->loadMissing('findingsSummary');
-    }
-
-    protected function getPlaceholdData(string $message, string $level = null): array
+    protected function getPlaceholder(string $message, string $level = null): array
     {
         $this->totalChecks = 0;
         return [
