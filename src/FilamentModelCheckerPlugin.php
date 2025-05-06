@@ -33,6 +33,18 @@ class FilamentModelCheckerPlugin implements Plugin
         return '';
     }
 
+    public function recordTitle(Closure $mapping): static
+    {
+        $this->recordTitleMapping = $mapping;
+        return $this;
+    }
+
+    public function recordUrl(Closure $mapping): static
+    {
+        $this->recordUrlMapping = $mapping;
+        return $this;
+    }
+
     public function getRecordUrl($record): string
     {
         if ($this->recordUrlMapping instanceof Closure) {
