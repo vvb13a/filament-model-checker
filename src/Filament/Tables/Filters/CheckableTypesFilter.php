@@ -22,7 +22,13 @@ class CheckableTypesFilter extends SelectFilter
 
     protected function getCheckableTypesArr(): array
     {
-        $plugin = Filament::getCurrentPanel()?->getPlugin('filament-model-checker');
+        $currentPanel = Filament::getCurrentPanel();
+        $plugin = null;
+
+        if ($currentPanel && $currentPanel->hasPlugin('filament-model-checker')) {
+            $plugin = $currentPanel->getPlugin('filament-model-checker');
+        }
+
         $checkableTypes = $plugin?->getCheckableTypes() ?? [];
 
         if (empty($checkableTypes)) {

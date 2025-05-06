@@ -10,7 +10,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Vvb13a\FilamentModelChecker\Filament\Actions\LaunchBulkModelChecksAction;
-use Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource;
+use Vvb13a\FilamentModelChecker\Filament\Resources\SummaryResource;
 use Vvb13a\FilamentModelChecker\Filament\Tables\Columns\FindingLevelColumn;
 use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\CheckableTypesFilter;
 use Vvb13a\FilamentModelChecker\Filament\Tables\Filters\FindingLevelFilter;
@@ -22,8 +22,14 @@ class ListSummaries extends ListRecords
 
     public static function getResource(): string
     {
-        $plugin = Filament::getCurrentPanel()?->getPlugin('filament-model-checker');
-        return $plugin?->getSummaryResourceClass() ?? FindingResource::class;
+        $currentPanel = Filament::getCurrentPanel();
+        $plugin = null;
+
+        if ($currentPanel && $currentPanel->hasPlugin('filament-model-checker')) {
+            $plugin = $currentPanel->getPlugin('filament-model-checker');
+        }
+
+        return $plugin?->getSummaryResourceClass() ?? SummaryResource::class;
     }
 
     public function table(Table $table): Table
