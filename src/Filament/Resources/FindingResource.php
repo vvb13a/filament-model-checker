@@ -18,4 +18,16 @@ class FindingResource extends Resource
             'index' => ListFindings::route('/'),
         ];
     }
+
+    protected static function getRecordResourceUrl($record): string
+    {
+        // Map Checkable Models to Resource Url -> TableRecordUrl
+        return '';
+    }
+
+    protected static function getRecordDisplayTitle($record): string
+    {
+        // Map Checkable Models to Title
+        return '';
+    }
 }

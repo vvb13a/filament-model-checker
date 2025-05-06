@@ -2,6 +2,7 @@
 
 namespace Vvb13a\FilamentModelChecker;
 
+use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Vvb13a\FilamentModelChecker\Filament\Resources\FindingResource;
@@ -14,9 +15,32 @@ class FilamentModelCheckerPlugin implements Plugin
     protected string $findingResource = FindingResource::class;
     protected array $checkableTypes = [];
 
+    protected ?Closure $recordTitleMapping = null;
+    protected ?Closure $recordUrlMapping = null;
+
     public static function make(): static
     {
         return app(static::class);
+    }
+
+    public function getRecordTitle($record): string
+    {
+        if ($this->recordTitleMapping instanceof Closure) {
+            $mapping = $this->recordTitleMapping;
+            return $mapping($record);
+        }
+
+        return '';
+    }
+
+    public function getRecordUrl($record): string
+    {
+        if ($this->recordUrlMapping instanceof Closure) {
+            $mapping = $this->recordUrlMapping;
+            return $mapping($record);
+        }
+
+        return '';
     }
 
     public function findingResource(string $resourceClass): static

@@ -104,13 +104,25 @@ class ListFindings extends ListRecords
 
     protected function getRecordTitle($record): string
     {
-        // Map Checkable Models to Title
+        $currentPanel = Filament::getCurrentPanel();
+
+        if ($currentPanel && $currentPanel->hasPlugin('filament-model-checker')) {
+            $plugin = $currentPanel->getPlugin('filament-model-checker');
+            return $plugin->getRecordTitle($record);
+        }
+
         return '';
     }
 
     protected function getRecordResourceUrl($record): string
     {
-        // Map Checkable Models to Resource Url -> TableRecordUrl
+        $currentPanel = Filament::getCurrentPanel();
+
+        if ($currentPanel && $currentPanel->hasPlugin('filament-model-checker')) {
+            $plugin = $currentPanel->getPlugin('filament-model-checker');
+            return $plugin->getRecordUrl($record);
+        }
+
         return '';
     }
 
