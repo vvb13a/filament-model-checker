@@ -43,7 +43,7 @@ class ListSummaries extends ListRecords
                         return class_basename(Relation::getMorphedModel($record->checkable_type));
                     })
                     ->searchable(),
-                TextColumn::make('checkable.title')
+                TextColumn::make('checkable.id')
                     ->label('Title')
                     ->wrap()
                     ->formatStateUsing(function ($record): string {

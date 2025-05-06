@@ -45,7 +45,7 @@ class ListFindings extends ListRecords
                     ->formatStateUsing(function ($record): string {
                         return class_basename(Relation::getMorphedModel($record->checkable_type));
                     }),
-                TextColumn::make('checkable.title')
+                TextColumn::make('checkable.id')
                     ->label('Title')
                     ->wrap()
                     ->formatStateUsing(function ($record): string {
