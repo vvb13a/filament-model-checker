@@ -45,22 +45,26 @@ class ListFindings extends ListRecords
                     ->formatStateUsing(function ($record): string {
                         return class_basename(Relation::getMorphedModel($record->checkable_type));
                     }),
+
                 TextColumn::make('checkable.id')
                     ->label('Title')
                     ->wrap()
                     ->formatStateUsing(function ($record): string {
                         return $this->getRecordTitle($record->checkable);
                     }),
+
                 TextColumn::make('check_name')
                     ->searchable()
                     ->badge()
                     ->color('info')
                     ->sortable(),
                 FindingLevelColumn::make(),
+
                 Tables\Columns\TextColumn::make('message')
                     ->searchable()
                     ->limit(80)
                     ->wrap(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->since()
@@ -83,7 +87,9 @@ class ListFindings extends ListRecords
                     Tables\Actions\ViewAction::make()
                         ->modalHeading(false)
                         ->infolist(static::getModalInfolist()),
+                    
                     Tables\Actions\DeleteAction::make(),
+
                     Tables\Actions\Action::make('open_link')
                         ->icon('heroicon-o-link')
                         ->color('info')

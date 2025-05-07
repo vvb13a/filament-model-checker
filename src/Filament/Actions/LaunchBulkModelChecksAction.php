@@ -29,7 +29,8 @@ class LaunchBulkModelChecksAction extends Action
                 ->options(FindingLevel::class),
         ]);
         $this->action(function ($data) {
-            RunBulkModelChecksJob::dispatch($data['checkable_type'], level: $data['level'] ?? null);
+            $level = isset($data['level']) ? FindingLevel::from($data['level']) : null;
+            RunBulkModelChecksJob::dispatch($data['checkable_type'], level: $level);
         });
     }
 
@@ -46,7 +47,7 @@ class LaunchBulkModelChecksAction extends Action
         if ($currentPanel && $currentPanel->hasPlugin('filament-model-checker')) {
             $plugin = $currentPanel->getPlugin('filament-model-checker');
         }
-        
+
         $checkableTypes = $plugin?->getCheckableTypes() ?? [];
 
         if (empty($checkableTypes)) {
